@@ -1,6 +1,6 @@
 
 const VINCI_ENV = sessionStorage.getItem('vinciEnv');
-const BASE_URL = VINCI_ENV === 'dev' ? 'http://localhost:5001/vinci-dev-6e577/us-central1/publicApi/public' :
+const BASE_URL = VINCI_ENV !== 'dev' ? 'http://localhost:5001/vinci-dev-6e577/us-central1/publicApi/public' :
     'https://us-central1-vinci-prod.cloudfunctions.net/publicApi/public';
 const PROJECT_ID = ''
 const Web3Modal = window.Web3Modal.default;
@@ -318,7 +318,7 @@ async function check_user_NFT(user_address, token_address, provider_uri) {
 
 function openPopupD() {
     var allIds = {};
-    var popup = window.open(apiURL + '/routes/discord/reverse', '', "width=400, height=400");
+    var popup = window.open(BASE_URL + '/routes/discord/reverse', '', "width=400, height=400");
 
     var popupTick = setInterval(function () {
         if (popup.location.href.indexOf('discordU') > -1) {
@@ -344,7 +344,7 @@ function openPopupD() {
 
 function openPopupT() {
     var allIds = {};
-    var popup = window.open(apiURL + '/routes/twitter/auth/twitter1', '', "width=400, height=400");
+    var popup = window.open(BASE_URL + '/routes/twitter/auth/twitter1', '', "width=400, height=400");
 
     var popupTick = setInterval(function () {
         if (popup.location.href.indexOf('twitterU') > -1) {
