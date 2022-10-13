@@ -315,6 +315,59 @@ async function check_user_NFT(user_address, token_address, provider_uri) {
     return false;
 }
 
+
+function openPopupD() {
+    var allIds = {};
+    var popup = window.open(apiURL + '/routes/discord/reverse', '', "width=400, height=400");
+
+    var popupTick = setInterval(function () {
+        if (popup.location.href.indexOf('discordU') > -1) {
+            popup.close();
+            clearInterval(popupTick);
+            const params = popup.location.href.split("twitterU=")[1]
+            if (window.localStorage.getItem('user') !== null) {
+                allIds.discordU = params;
+                let userData = JSON.parse(window.localStorage.getItem('user'));
+                let merged = { ...userData, ...allIds };
+                window.localStorage.setItem('user', JSON.stringify(merged));
+            }
+            else {
+                allIds.twitterU = params;
+                allIds.id = 'onboarding-user-' + crypto.randomUUID();
+                window.localStorage.setItem('user', JSON.stringify(allIds));
+            }
+        }
+    }, 1000);
+
+    return false;
+}
+
+function openPopupT() {
+    var allIds = {};
+    var popup = window.open(apiURL + '/routes/twitter/auth/twitter1', '', "width=400, height=400");
+
+    var popupTick = setInterval(function () {
+        if (popup.location.href.indexOf('twitterU') > -1) {
+            popup.close();
+            clearInterval(popupTick);
+            const params = popup.location.href.split("twitterU=")[1]
+            if (window.localStorage.getItem('user') !== null) {
+                allIds.twitterU = params;
+                let userData = JSON.parse(window.localStorage.getItem('user'));
+                let merged = { ...userData, ...allIds };
+                window.localStorage.setItem('user', JSON.stringify(merged));
+            }
+            else {
+                allIds.twitterU = params;
+                allIds.id = 'onboarding-user-' + crypto.randomUUID();
+                window.localStorage.setItem('user', JSON.stringify(allIds));
+            }
+        }
+    }, 1000);
+
+    return false;
+}
+
 logPageView();
 init();
 
