@@ -348,6 +348,7 @@ function openPopupT() {
     var popup = window.open(BASE_URL + '/routes/twitter/auth/twitter1', '', "width=400, height=400");
 
     var popupTick = setInterval(function () {
+        console.log(popup)
         console.log(popup.location.href)
         if (popup.location.href.indexOf('twitterU') > -1) {
             popup.close();
