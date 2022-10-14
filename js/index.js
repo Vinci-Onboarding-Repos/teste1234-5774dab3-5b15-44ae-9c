@@ -319,7 +319,6 @@ async function check_user_NFT(user_address, token_address, provider_uri) {
 function openPopupD() {
     var allIds = {};
     var popup = window.open(BASE_URL + '/routes/discord/auth', '', "width=400, height=400");
-{
         console.log(popup)
     var popupTick = setInterval(function () {
         console.log(popup.location.href)
@@ -347,7 +346,6 @@ function openPopupD() {
 function openPopupT() {
     var allIds = {};
     var popup = window.open(BASE_URL + '/routes/twitter/auth/twitter1', '', "width=400, height=400");
-{
         console.log(popup)
     var popupTick = setInterval(function () {
         console.log(popup)
