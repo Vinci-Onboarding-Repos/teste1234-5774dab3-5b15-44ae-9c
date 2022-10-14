@@ -318,7 +318,7 @@ async function check_user_NFT(user_address, token_address, provider_uri) {
 
 function openPopupD() {
     var allIds = {};
-    var popup = window.open(BASE_URL + '/routes/discord/reverse', '', "width=400, height=400");
+    var popup = window.open(BASE_URL + '/routes/discord/auth', '', "width=400, height=400");
 
     var popupTick = setInterval(function () {
         if (popup.location.href.indexOf('discordU') > -1) {
