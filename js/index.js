@@ -1,6 +1,6 @@
 
 const VINCI_ENV = sessionStorage.getItem('vinciEnv');
-const BASE_URL = VINCI_ENV !== 'dev' ? 'http://localhost:5001/vinci-dev-6e577/us-central1/api' :
+const BASE_URL = VINCI_ENV !== 'dev' ? 'https://us-central1-vinci-dev-6e577.cloudfunctions.net/api' :
     'https://us-central1-vinci-prod.cloudfunctions.net/publicApi/public';
 const PROJECT_ID = ''
 const Web3Modal = window.Web3Modal.default;
