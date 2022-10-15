@@ -1477,3 +1477,60 @@ height: 60px;
     align-items: center;
     width: 100%;
 }
+
+.icon{
+  width: 24px;
+}
+
+.InputTwitter{
+  gap: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #eaeeff;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: Poppins;
+  line-height: 20px;
+  white-space: nowrap;
+  border-style: solid;
+  border-color: #eaeeff;
+  background-color: #1DA1F2;
+  border-radius: 8px;
+  padding: 13.2px 15.2px;
+  border-width: 0.8px;
+  box-sizing: content-box;
+  cursor: pointer;
+
+}
+
+.InputTwitter:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+}
+.InputDiscord{
+  gap: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #eaeeff;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: Poppins;
+  line-height: 20px;
+  white-space: nowrap;
+  border-style: solid;
+  border-color: #eaeeff;
+  background-color: #7289da;
+  border-radius: 8px;
+  padding: 13.2px 15.2px;
+  border-width: 0.8px;
+  box-sizing: content-box;
+  cursor: pointer;
+
+}
+
+.InputDiscord:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+}
