@@ -322,21 +322,26 @@ function openPopupD() {
     var popup = window.open(BASE_URL + '/routes/discord/auth?original='+window.location.href, '', "width=400, height=400");
 
     var popupTick = setInterval(function () {
-        if (popup.location.href.indexOf('discordU') > -1) {
+        if(popup.location.href !== undefined){
+            if (popup.location.href.indexOf('discordU') > -1) {
+                popup.close();
+                clearInterval(popupTick);
+                const params = popup.location.href.split("twitterU=")[1]
+                if (window.localStorage.getItem('user') !== null) {
+                    allIds.discordU = params;
+                    let userData = JSON.parse(window.localStorage.getItem('user'));
+                    let merged = { ...userData, ...allIds };
+                    window.localStorage.setItem('user', JSON.stringify(merged));
+                }
+                else {
+                    allIds.twitterU = params;
+                    allIds.id = 'onboarding-user-' + crypto.randomUUID();
+                    window.localStorage.setItem('user', JSON.stringify(allIds));
+                }
+            }
+        }else{
             popup.close();
             clearInterval(popupTick);
-            const params = popup.location.href.split("twitterU=")[1]
-            if (window.localStorage.getItem('user') !== null) {
-                allIds.discordU = params;
-                let userData = JSON.parse(window.localStorage.getItem('user'));
-                let merged = { ...userData, ...allIds };
-                window.localStorage.setItem('user', JSON.stringify(merged));
-            }
-            else {
-                allIds.twitterU = params;
-                allIds.id = 'onboarding-user-' + crypto.randomUUID();
-                window.localStorage.setItem('user', JSON.stringify(allIds));
-            }
         }
     }, 1000);
 
@@ -348,21 +353,26 @@ function openPopupT() {
     var popup = window.open(BASE_URL + '/routes/twitter/auth/twitter1?original='+window.location.href, '', "width=400, height=400");
 
     var popupTick = setInterval(function () {
-        if (popup.location.href.indexOf('twitterU') > -1) {
+        if (popup.location.href !== undefined) {
+            if (popup.location.href.indexOf('twitterU') > -1) {
+                popup.close();
+                clearInterval(popupTick);
+                const params = popup.location.href.split("twitterU=")[1]
+                if (window.localStorage.getItem('user') !== null) {
+                    allIds.twitterU = params;
+                    let userData = JSON.parse(window.localStorage.getItem('user'));
+                    let merged = { ...userData, ...allIds };
+                    window.localStorage.setItem('user', JSON.stringify(merged));
+                }
+                else {
+                    allIds.twitterU = params;
+                    allIds.id = 'onboarding-user-' + crypto.randomUUID();
+                    window.localStorage.setItem('user', JSON.stringify(allIds));
+                }
+            }
+        }else{
             popup.close();
             clearInterval(popupTick);
-            const params = popup.location.href.split("twitterU=")[1]
-            if (window.localStorage.getItem('user') !== null) {
-                allIds.twitterU = params;
-                let userData = JSON.parse(window.localStorage.getItem('user'));
-                let merged = { ...userData, ...allIds };
-                window.localStorage.setItem('user', JSON.stringify(merged));
-            }
-            else {
-                allIds.twitterU = params;
-                allIds.id = 'onboarding-user-' + crypto.randomUUID();
-                window.localStorage.setItem('user', JSON.stringify(allIds));
-            }
         }
     }, 1000);
 
