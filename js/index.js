@@ -324,8 +324,7 @@ function openPopupD() {
     var popupTick = setInterval(function () {
         if(popup.location.href !== undefined){
             if (popup.location.href.indexOf('discordU') > -1) {
-                popup.close();
-                clearInterval(popupTick);
+                console.log(params)
                 const params = popup.location.href.split("twitterU=")[1]
                 if (window.localStorage.getItem('user') !== null) {
                     allIds.discordU = params;
@@ -338,6 +337,8 @@ function openPopupD() {
                     allIds.id = 'onboarding-user-' + crypto.randomUUID();
                     window.localStorage.setItem('user', JSON.stringify(allIds));
                 }
+                popup.close();
+                clearInterval(popupTick);
             }
         }else{
             popup.close();
@@ -355,9 +356,8 @@ function openPopupT() {
     var popupTick = setInterval(function () {
         if (popup.location.href !== undefined) {
             if (popup.location.href.indexOf('twitterU') > -1) {
-                popup.close();
-                clearInterval(popupTick);
                 const params = popup.location.href.split("twitterU=")[1]
+                console.log(params)
                 if (window.localStorage.getItem('user') !== null) {
                     allIds.twitterU = params;
                     let userData = JSON.parse(window.localStorage.getItem('user'));
@@ -369,6 +369,8 @@ function openPopupT() {
                     allIds.id = 'onboarding-user-' + crypto.randomUUID();
                     window.localStorage.setItem('user', JSON.stringify(allIds));
                 }
+                popup.close();
+                clearInterval(popupTick);
             }
         }else{
             popup.close();
