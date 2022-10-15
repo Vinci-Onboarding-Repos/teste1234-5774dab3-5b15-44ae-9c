@@ -39,7 +39,9 @@
     </script>
     
     <script>
-           var popupTick = setInterval(function () {
+    window.addEventListener('load', async () => {
+    
+    var popupTick = setInterval(function () {
             let inputs = document.getElementsByClassName('required');
             let btn =  document.getElementById('inputNext');
             let isValid = true;
@@ -72,6 +74,8 @@
 
             btn.disabled = !isValid;
         }, 1000);
+
+    });
     </script>
 </head>
     <body>
