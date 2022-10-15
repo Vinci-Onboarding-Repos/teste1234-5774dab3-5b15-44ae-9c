@@ -324,8 +324,8 @@ function openPopupD() {
     var popupTick = setInterval(function () {
         if(popup.location.href !== undefined){
             if (popup.location.href.indexOf('discordU') > -1) {
+                const params = popup.location.href.split("discordU=")[1]
                 console.log(params)
-                const params = popup.location.href.split("twitterU=")[1]
                 if (window.localStorage.getItem('user') !== null) {
                     allIds.discordU = params;
                     let userData = JSON.parse(window.localStorage.getItem('user'));
