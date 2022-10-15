@@ -39,44 +39,39 @@
     </script>
     
     <script>
-        function enableSubmit(){
+           var popupTick = setInterval(function () {
             let inputs = document.getElementsByClassName('required');
             let btn =  document.getElementById('inputNext');
             let isValid = true;
 
             for (var i = 0; i < inputs.length; i++){
-              let changedInput = inputs[i];
-              if (changedInput.value.trim() === "" || changedInput.value === null){
-                  isValid = false;
-                  break;
-              }
+                let changedInput = inputs[i];
+                if (changedInput.value.trim() === "" || changedInput.value === null){
+                    isValid = false;
+                    break;
+                }
             }
             if(document.querySelector("#linkedDiscord") !== null){
                 const elem = document.querySelector("#linkedDiscord");
                 var html = elem.innerHTML;
-                console.log(html)
                 if(html.includes("Linked")){
                     isValid = true;
                 }else{
                     isValid = false;
                 }
-                console.log(isValid)
             }
             if(document.querySelector("#linkedTwitter") !== null){
                 const elem = document.querySelector("#linkedTwitter");
                 var html = elem.innerHTML;
-                console.log(html)
                 if(html.includes("Linked")){
                     isValid = true;
                 }else{
                     isValid = false;
                 }
-                console.log(isValid)
             }
 
-            console.log(isValid)
             btn.disabled = !isValid;
-        }
+        }, 1000);
     </script>
 </head>
     <body>
