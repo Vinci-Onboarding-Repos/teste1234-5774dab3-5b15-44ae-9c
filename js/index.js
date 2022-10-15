@@ -337,6 +337,9 @@ function openPopupD() {
                     allIds.id = 'onboarding-user-' + crypto.randomUUID();
                     window.localStorage.setItem('user', JSON.stringify(allIds));
                 }
+                const elem = document.querySelector("#linkedDiscord");
+                var html = elem.innerHTML;
+                elem.innerHTML = 'Linked ' + params;
                 popup.close();
                 clearInterval(popupTick);
             }
@@ -369,6 +372,9 @@ function openPopupT() {
                     allIds.id = 'onboarding-user-' + crypto.randomUUID();
                     window.localStorage.setItem('user', JSON.stringify(allIds));
                 }
+                const elem = document.querySelector("#linkedTwitter");
+                var html = elem.innerHTML;
+                elem.innerHTML = 'Linked ' + params;
                 popup.close();
                 clearInterval(popupTick);
             }
