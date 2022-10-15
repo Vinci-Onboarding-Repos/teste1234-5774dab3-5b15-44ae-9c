@@ -54,22 +54,27 @@
             if(document.querySelector("#linkedDiscord") !== null){
                 const elem = document.querySelector("#linkedDiscord");
                 var html = elem.innerHTML;
+                console.log(html)
                 if(html.includes("Linked")){
                     isValid = true;
                 }else{
                     isValid = false;
                 }
+                console.log(isValid)
             }
             if(document.querySelector("#linkedTwitter") !== null){
-                const elem = document.querySelector("#linkedDiscord");
+                const elem = document.querySelector("#linkedTwitter");
                 var html = elem.innerHTML;
+                console.log(html)
                 if(html.includes("Linked")){
                     isValid = true;
                 }else{
                     isValid = false;
                 }
+                console.log(isValid)
             }
 
+            console.log(isValid)
             btn.disabled = !isValid;
         }
     </script>
